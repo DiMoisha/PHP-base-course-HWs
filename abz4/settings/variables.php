@@ -1,0 +1,19 @@
+// SITE SETTINGS
+$margin      = 30;
+$outermargin = 10;
+$widthdiff   = 10;
+$logoWidth   = 330;
+$pageWidth   = 980;
+$pageWidth   = $pageWidth - $outermargin;
+$imageHeight = 206;
+$imageWidth  = 970;
+$controlPosition = 50 - 2500/$imageHeight;
+$headerrightWidth = $pageWidth + $outermargin - $logoWidth - 110 - 60;
+$leftColumnWidth = 160;
+$contentWidth = $pageWidth - $leftColumnWidth - 2*$margin;
+$logoTitle   = 'ОАО АБЗ-4 "КАПОТНЯ"';
+$logoText    = 'АБЗ-4 "КАПОТНЯ"';
+$slogan      = "продажа асфальта, бетона, битумных эмульсий";
+$myAdres     = "г. Москва, ул. Верхние Поля, 54";
+$myTel       = "тел.: (495)-359-75-25, (495)-359-72-00";
+$myRights    = 'ОАО АБЗ-4 "КАПОТНЯ". Все права защищены.';
