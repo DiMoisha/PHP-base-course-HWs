@@ -1,0 +1,29 @@
+try{
+var el=document.getElementById('ads_menu').getElementsByTagName('a');
+var url=document.location.href;
+for(var i=0;i<el.length; i++){
+if (url==el[i].href){
+el[i].className += ' active';
+};
+};
+}catch(e){}
+
+<!--<?php echo $_SERVER['URI']; ?>/index.php?page=contact-->
+
+
+
+<ul class="menu">
+                                       <li class="item-1"><a href="/"><?php echo htmlspecialchars($topMenu1); ?></a></li>
+                                       <li class="item-2"><a href="/index.php?page=contact"><?php echo htmlspecialchars($topMenu2); ?></a></li>
+                                       <li class="item-3"><a href="http://193.104.14.66"><?php echo htmlspecialchars($topMenu3); ?></a></li>
+                                    </ul>
+
+                                    <script type="text/javascript">
+                                        try{
+                                        var links = document.getElementsByClassName('menu')[0].getElementsByTagName('a');
+                                        for(var i = 0; i < links.length; i++){
+                                        if(links[i].href == location.href)
+                                         links[i].parentNode.className += ' active';
+                                         };
+                                         }catch(e){}
+                                    </script>
