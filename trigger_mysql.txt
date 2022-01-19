@@ -1,0 +1,15 @@
+ DELIMITER //
+
+    USE `abz`//
+    
+    DROP TRIGGER /*!50032 IF EXISTS */ `tInsUser`//
+    
+    CREATE
+        TRIGGER `tInsUser` AFTER INSERT ON `users` 
+        FOR EACH ROW 
+         BEGIN    
+           INSERT INTO userroles (`userid`) VALUES (NEW.`userid`);
+         END; 
+    //
+    
+    DELIMITER ;
