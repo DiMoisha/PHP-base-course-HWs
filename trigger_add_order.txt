@@ -1,0 +1,19 @@
+ DELIMITER //
+
+    USE `abz`//
+    
+    DROP TRIGGER /*!50032 IF EXISTS */ `tInsOrder`//
+    
+    CREATE
+        TRIGGER `tInsOrder` AFTER INSERT ON `orders` 
+        FOR EACH ROW 
+            BEGIN    
+                INSERT INTO `orderdetails`(`orderid`, `cartid`, `productid`, `price`, `quantity`, `sm`)
+                SELECT NEW.`orderid`, `cartid`, `productid`, `price`, `quantity`, `sm` FROM `cart` 
+                WHERE `userid`=NEW.`userid` AND `orderstatusid`=1;
+               
+                UPDATE `cart` SET `orderstatusid`=2 WHERE `userid`=NEW.`userid` AND `orderstatusid`=1;
+            END; 
+    //
+    
+    DELIMITER ;
